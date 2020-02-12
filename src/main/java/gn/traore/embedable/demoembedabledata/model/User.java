@@ -13,9 +13,12 @@ import javax.validation.constraints.NotNull;
 @Table(name = "users")
 @Data @NoArgsConstructor @AllArgsConstructor @ToString
 public class User {
-    @Id
+    /*@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id;*/
+
+    @EmbeddedId
+    private UserIdentity identity;
 
     @Embedded
     private Name name;

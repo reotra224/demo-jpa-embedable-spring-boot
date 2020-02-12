@@ -3,6 +3,7 @@ package gn.traore.embedable.demoembedabledata;
 import gn.traore.embedable.demoembedabledata.model.Address;
 import gn.traore.embedable.demoembedabledata.model.Name;
 import gn.traore.embedable.demoembedabledata.model.User;
+import gn.traore.embedable.demoembedabledata.model.UserIdentity;
 import gn.traore.embedable.demoembedabledata.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -25,9 +26,10 @@ public class DemoEmbedableDataApplication implements CommandLineRunner {
         userRepository.deleteAllInBatch();
 
         // Insert a new user in the database
+        UserIdentity identity = new UserIdentity(1L, 3L);
         Name name = new Name("Ibrahima", "Sory", "TRAORE");
         Address address = new Address("747", "Golf View Road", "Bangalore", "Karnataka", "India", "560008");
-        User user = new User(null, name, "rajeev@callicoder.com", address);
+        User user = new User(identity, name, "rajeev@callicoder.com", address);
 
         userRepository.save(user);
 
