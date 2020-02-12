@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 @Embeddable
-@Data @NoArgsConstructor @AllArgsConstructor @ToString @EqualsAndHashCode
+@Data @NoArgsConstructor @AllArgsConstructor @ToString
 public class UserIdentity implements Serializable {
 
     @NotNull
